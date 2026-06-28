@@ -33,17 +33,11 @@ fn main() {
     }
 
     let median_word_length = get_median(&mut word_lengths);
+    let number_of_words = word_lengths.len();
 
+    println!("This piece of text has {number_of_words} words, with a median word length of {median_word_length}. The most common word(s) is/are {:?}, which appears {most_frequent_word_count} times.", most_frequent_words.join(", "));
+    println!();
     dbg!(word_map);
-    dbg!(most_frequent_words);
-    dbg!(most_frequent_word_count);
-    dbg!(median_word_length);
-
-
-    println!("{text}");
-
-    
-
 }
 
 fn get_input(instruction: &str) -> String {
@@ -70,12 +64,3 @@ fn get_median(numbers: &mut [usize]) -> f64 {
         numbers[numbers_mid] as f64
     }
 }
-
-/*
-    word_lengths.sort_unstable();
-    let word_lengths_length = word_lengths;
-    let word_lengths_mid = word_lengths / 2;
-
-    if word_lengths_length
-            
-*/
